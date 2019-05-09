@@ -19,14 +19,16 @@ ul#board {
 
         &.cross {
             &:after {
-                content: " X ";
+                content: url(img/x.gif);
+                display: block;
+                margin: 0 auto;
             }
         }
 
         &.circle {
 
             &:after {
-                content: " O ";
+                content: url(img/o.gif);
             }
         }
 

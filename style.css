@@ -18,10 +18,12 @@ ul#board li:nth-child(4), ul#board li:nth-child(7) {
 }
 
 ul#board li.cross:after {
-  content: " X ";
+  content: url(img/x.gif);
+  display: block;
+  margin: 0 auto;
 }
 
 ul#board li.circle:after {
-  content: " O ";
+  content: url(img/o.gif);
 }
 /*# sourceMappingURL=style.css.map */
