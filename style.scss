@@ -1,36 +1,80 @@
-ul#board {
-    li {
-        width: 200px;
-        height: 200px;
-        border: 1px solid black;
-        list-style: none;
-        float: left;
+body{
+    font-family: 'Rock Salt', cursive;
 
-        &:after {
-            font-size: 80px;
-            position: relative;
-            top: 60px;
-            left: 60px;
+    ul#board {
+        &.circle-wins:after{
+            content: "O wins!";
+            font-size: 70px;
+            text-transform: uppercase;
+            color: #000000;
+            width: 500px;
+            height: 100px;
+            position: absolute;
+            top: 150px;
+            right: 20px;
         }
-
-        &:nth-child(4),&:nth-child(7)  {
-            clear: left;
+        &.cross-wins:after{
+            content: "X wins!";
+            font-size: 70px;
+            text-transform: uppercase;
+            color: #000000;
+            width: 500px;
+            height: 100px;
+            position: absolute;
+            top: 150px;
+            right: 20px;
         }
+        li {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            list-style: none;
+            float: left;
 
-        &.cross {
             &:after {
-                content: url(img/x.gif);
-                display: block;
-                margin: 0 auto;
+                font-size: 80px;
+                position: relative;
+                left: 60px;
             }
-        }
 
-        &.circle {
-
-            &:after {
-                content: url(img/o.gif);
+            &:nth-child(4),&:nth-child(7)  {
+                clear: left;
             }
-        }
 
+            &.cross {
+                &:after {
+                    content: "X";
+                }
+            }
+
+            &.circle {
+
+                &:after {
+                    content: "O";
+                }
+            }
+
+        }
+    }
+
+    #button {
+        display: none;
+
+        &.active {
+            display: inline;
+        }
+        font-family: 'Open Sans', sans-serif;
+        font-size: 26px;
+        width: 210px;
+        height: 120px;
+        position: absolute;
+        top: 330px;
+        right: 242px;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-image: url(img/marker-circle.gif);
+        background-size: 209px;
+        background-repeat: no-repeat;
+        border: none;
     }
 }

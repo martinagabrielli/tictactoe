@@ -1,4 +1,32 @@
-ul#board li {
+body {
+  font-family: 'Rock Salt', cursive;
+}
+
+body ul#board.circle-wins:after {
+  content: "O wins!";
+  font-size: 70px;
+  text-transform: uppercase;
+  color: #000000;
+  width: 500px;
+  height: 100px;
+  position: absolute;
+  top: 150px;
+  right: 20px;
+}
+
+body ul#board.cross-wins:after {
+  content: "X wins!";
+  font-size: 70px;
+  text-transform: uppercase;
+  color: #000000;
+  width: 500px;
+  height: 100px;
+  position: absolute;
+  top: 150px;
+  right: 20px;
+}
+
+body ul#board li {
   width: 200px;
   height: 200px;
   border: 1px solid black;
@@ -6,24 +34,42 @@ ul#board li {
   float: left;
 }
 
-ul#board li:after {
+body ul#board li:after {
   font-size: 80px;
   position: relative;
-  top: 60px;
   left: 60px;
 }
 
-ul#board li:nth-child(4), ul#board li:nth-child(7) {
+body ul#board li:nth-child(4), body ul#board li:nth-child(7) {
   clear: left;
 }
 
-ul#board li.cross:after {
-  content: url(img/x.gif);
-  display: block;
-  margin: 0 auto;
+body ul#board li.cross:after {
+  content: "X";
 }
 
-ul#board li.circle:after {
-  content: url(img/o.gif);
+body ul#board li.circle:after {
+  content: "O";
+}
+
+body #button {
+  display: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 26px;
+  width: 210px;
+  height: 120px;
+  position: absolute;
+  top: 330px;
+  right: 242px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-image: url(img/marker-circle.gif);
+  background-size: 209px;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+body #button.active {
+  display: inline;
 }
 /*# sourceMappingURL=style.css.map */
