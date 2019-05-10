@@ -1,5 +1,6 @@
 var turn = false;
 var finished = false;
+var count = 0;
 
 function checkThreeSymbols(symbol, a, b, c){
     if(jQuery('#board li:nth-child('+a+')').hasClass(symbol)
@@ -18,7 +19,7 @@ function markBoard(){
 
         if(!jQuery(this).hasClass('mark')){
             jQuery(this).addClass('mark');
-    
+            count++;
             if(turn === false){
                 turn = true;
                 jQuery(this).addClass('cross');
@@ -61,13 +62,20 @@ function markBoard(){
         }
     }
 
+    if(count == 9 && finished == false) {
+        jQuery('#button').addClass('active');
+        jQuery('#board').addClass('draw')
+    }
+
 }
 
 function reset(){
     jQuery('#board li').removeClass('mark cross circle');
     jQuery('#board').removeClass('circle-wins cross-wins');
     jQuery('#button').removeClass('active');
+    jQuery('#board').removeClass('draw');
     finished = false;
+    count = 0;
 }
 
 jQuery('#button').click(reset);
